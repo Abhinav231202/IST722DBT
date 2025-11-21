@@ -1,4 +1,5 @@
 version: 2
 models:
   - name: obt_sales
-    description: One Big Table for sales - combines fact_sales with all related dimensions  
+    description: One Big Table for sales - combines fact_sales with all related dimensions.
+    
