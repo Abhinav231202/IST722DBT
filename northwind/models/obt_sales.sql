@@ -33,4 +33,4 @@ from f_sales f
     left join d_employee on f.employeekey = d_employee.employeekey
     left join d_product on f.productkey = d_product.productkey
     left join d_supplier on f.supplierkey = d_supplier.supplierkey
-    left join d_date on f.orderdatekey = d_date.datekey
+    left join d_date on f.orderdatekey = d_date.datekey 
