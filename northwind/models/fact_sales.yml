@@ -1,0 +1,18 @@
+version: 2
+models:
+  - name: fact_sales
+    description: Sales fact table at order line item grain
+    columns:
+      - name: saleskey
+        description: Primary key for sales fact
+        tests:
+          - unique
+          - not_null
+      - name: productkey
+        description: Foreign key to product dimension
+      - name: customerkey
+        description: Foreign key to customer dimension
+      - name: employeekey
+        description: Foreign key to employee dimension
+      - name: orderdatekey
+        description: Foreign key to date dimension for order date
