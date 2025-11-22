@@ -1,3 +1,21 @@
+with f_sales as (
+    select * from {{ ref('fact_sales') }}
+),
+d_customer as (
+    select * from {{ ref('dim_customer') }}
+),
+d_employee as (
+    select * from {{ ref('dim_employee') }}
+),
+d_product as (
+    select * from {{ ref('dim_product') }}
+),
+d_supplier as (
+    select * from {{ ref('dim_supplier') }}
+),
+d_date as (
+    select * from {{ ref('dim_date') }}
+)
 select 
     f.saleskey,
     f.orderid,
@@ -6,17 +24,8 @@ select
     f.quantity,
     f.discount,
     f.extendedpriceamount,
-    c.companyname as customer_company,
-    e.employeenamefirstlast as employee_name,
-    p.productname,
-    p.categoryname,
-    s.companyname as supplier_company,
-    d.date as order_date,
-    d.year as order_year,
-    d.month as order_month
-from {{ ref('fact_sales') }} f
-    left join {{ ref('dim_customer') }} c on f.customerkey = c.customerkey
-    left join {{ ref('dim_employee') }} e on f.employeekey = e.employeekey
-    left join {{ ref('dim_product') }} p on f.productkey = p.productkey
-    left join {{ ref('dim_supplier') }} s on f.supplierkey = s.supplierkey
-    left join {{ ref('dim_date') }} d on f.orderdatekey = d.datekey
+    d_customer.companyname as customer_company,
+    d_employee.employeenamefirstlast as employee_name,
+    d_product.productname,
+    d_product.categ
+    
