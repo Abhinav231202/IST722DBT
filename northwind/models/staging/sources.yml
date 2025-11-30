@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: uber_snowflake
+    database: UBER_PROJECT
+    schema: DW
+    tables:
+      - name: FACT_TRIPS
+        description: "Main fact table with all trips"
+      - name: DIM_DATE
+        description: "Date dimension"
+      - name: AGG_DAILY_SUMMARY
+        description: "Daily aggregated data"
