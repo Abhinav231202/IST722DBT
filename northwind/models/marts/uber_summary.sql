@@ -2,5 +2,6 @@
 SELECT
     COUNT(*) as total_trips,
     SUM(fare_amount) as total_revenue,
-    AVG(fare_amount) as average_fare
+    AVG(fare_amount) as average_fare,
+    AVG(trip_distance_miles) as avg_distance
 FROM {{ ref('stg_uber_trips') }}
