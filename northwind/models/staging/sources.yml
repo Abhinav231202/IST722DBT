@@ -3,9 +3,9 @@ version: 2
 sources:
   - name: uber_snowflake
     database: UBER_PROJECT
-    schema: DW
+    schema: STAGING  # Changed from DW
     tables:
-      - name: FACT_TRIPS
+      - name: RAW_UBER_TRIPS
         description: "Main fact table with all trips"
       - name: DIM_DATE
         description: "Date dimension"
